@@ -11,6 +11,16 @@
 |
 */
 
-$app->get('/', function () use ($app) {
+/*$app->get('/', function () use ($app) {
     return $app->version();
-});
+});*/
+
+
+$app->get('/music/create', "MusicBaseController@create");
+$app->get('/music', "MusicBaseController@index");
+$app->get('/music/{id}/edit', "MusicBaseController@edit");
+$app->get('/music/{id}', "MusicBaseController@show");
+$app->post('/music', "MusicBaseController@store");
+$app->put('/music/{id}', "MusicBaseController@update");
+$app->delete('/music/{id}', "MusicBaseController@destroy");
+
